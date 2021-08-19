@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Components/App/App';
 import reportWebVitals from './reportWebVitals';
+import { BirthdaysContextProvider } from "./Context/BirthdaysContext"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BirthdaysContextProvider>
+      <App />
+    </BirthdaysContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
