@@ -1,0 +1,9 @@
+{
+  "short_name": "Z3K Birthday tool",
+  "name": "Z3K Birthday tool",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
