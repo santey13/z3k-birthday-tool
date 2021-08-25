@@ -1,19 +1,17 @@
 import './App.css';
 import { Box, Container } from '@material-ui/core'
 import { UploadBirthdays } from "../UploadBirthdays/UploadBirthdays";
-import { useContext } from "react";
-import { BirthdaysContext } from "../../Context/BirthdaysContext";
+import { useState } from "react"
 import { BirthdaysList } from "../BirthdaysList/BirthdaysList"
 
 function App() {
-  const { birthdays } = useContext(BirthdaysContext);
+  const [birthdays, setBirthdays] = useState([]);
   const hasBirthdays = birthdays.length > 0;
 
   return (
       <Container className="App" maxWidth="lg">
         <Box marginTop={5}>
-          {hasBirthdays ? <BirthdaysList birthdays={birthdays} /> : <UploadBirthdays />}
-
+          {hasBirthdays ? <BirthdaysList birthdays={birthdays} /> : <UploadBirthdays setBirthdays={setBirthdays}/>}
         </Box>
       </Container>
   );

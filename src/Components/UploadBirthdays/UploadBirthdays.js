@@ -2,8 +2,6 @@ import { Box, Button } from "@material-ui/core";
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import { makeStyles } from '@material-ui/core/styles';
 import readXlsxFile from 'read-excel-file';
-import { useContext } from "react";
-import { BirthdaysContext } from "../../Context/BirthdaysContext"
 import { snakeToCamel } from "../../Helpers/snakeToCamel";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,9 +15,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const UploadBirthdays = () => {
+export const UploadBirthdays = ({setBirthdays}) => {
   const classes = useStyles();
-  const { setBirthdays } = useContext(BirthdaysContext);
 
   const handleFile = async (event) => {
     const data = await readXlsxFile(event.target.files[0]);
