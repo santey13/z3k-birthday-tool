@@ -14,7 +14,7 @@ export const BirthdaysList = ({birthdays}) => {
             .map(({name, birthdate, orgUnit, parentOrgUnit, avatarUrl}) =>
               (
                 <Grid item xs={3} key={name} className="BirthdaysListItem" justifyContent="center">
-                  <img src={avatarUrl.replace('https://core.zone3000.net', '')} title={name} alt={name} style={{ width: '100%', height: 'auto' }}/>
+                  <img src={avatarUrl} title={name} alt={name} style={{ width: '100%', height: 'auto' }}/>
                   <div>
                     <strong>
                       {parseDate(birthdate).toLocaleString('default', { month: 'long' })}, {parseDate(birthdate).getDate()}
